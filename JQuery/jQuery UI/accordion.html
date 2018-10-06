@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+  "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Accordion</title>
+<script type="text/javascript" src="jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
+<style type="text/css">
+#menu {
+	width: 250px;
+	height: 250px;
+    border: solid 2px black;
+    padding: 3px;
+}
+.menuHead{
+	border: solid 1px black;
+	background-color: #abacab;
+}
+.menuDiv {
+	border-bottom: dotted 1px black;
+}
+</style>
+</head>
+<body>
+<div id="menu">
+    <h3 class="menuHead">Menu 1</h3>
+    <div class="menuDiv" id="menu1">
+        <p>Văn bản cho menu 1</p>
+    </div>
+    <h3 class="menuHead">Menu 2</h3>
+    <div class="menuDiv" id="men2">
+        <p>Văn bản cho menu 2</p>
+    </div>
+    <h3 class="menuHead">Menu 3</h3>
+    <div class="menuDiv" id="menu3">
+    <p>Văn bản cho menu 3</p>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+$('#menu').accordion();
+
+});
+</script>
+
+</body>
+</html>

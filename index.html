@@ -1,0 +1,498 @@
+<!DOCTYPE html >
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title> MI VIETNAM</title>
+    <link rel="stylesheet" type="text/css" href="louyt.css">
+    <script type="text/javascript" src="JQuery/jquery-1.6.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> //menu
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var $navHeight = $(".navbar").height();
+
+
+            $(window).scroll(function () {
+
+                var top = $(window).scrollTop();
+
+                if (top > $navHeight) {
+
+                    $("body").addClass('navbar-fixed');
+                } else {
+
+                    $("body").removeClass('navbar-fixed');
+                }
+            })
+        }) 
+    </script>
+    <script type="text/javascript">
+        function getInfo() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var address = document.getElementById("address").value;
+            var comment = document.getElementById("comment").value;
+            //kiem tra du lieu vao form
+            if (name == "") {
+                document.getElementById("errorname").innerHTML = "Vui lòng nhập họ tên";
+            } else {
+                document.getElementById("errorname").innerHTML = "";
+            }
+            //kiem tra email
+            if (email == "") {
+                document.getElementById("erroremail").innerHTML = "Vui lòng nhập Email";
+            } else {
+                document.getElementById("erroremail").innerHTML = "";
+            }
+            //kiem tra sdt
+            if (phone == "") {
+                document.getElementById("errorphone").innerHTML = "Vui lòng nhập Số điện thoại";
+            } else {
+                document.getElementById("errorphone").innerHTML = "";
+            }
+            //kiem tra diachi
+            if (address == "") {
+                document.getElementById("erroraddress").innerHTML = "Vui lòng nhập địa chỉ";
+            } else {
+                document.getElementById("erroraddress").innerHTML = "";
+            }
+            //kiem tra noi dung
+            if (comment == "") {
+                document.getElementById("errorcomment").innerHTML = "Vui lòng nhập nội dung";
+            } else {
+                document.getElementById("errorcomment").innerHTML = "";
+            }
+            if (name && email && phone && address && comment) {
+
+                alert("Thông tin của bạn đã được gửi đi");
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-brand"><img src="images/logo.png" width="60px" height="60px"><a style="font-size:30px; padding: 10px;">Mi
+                Việt Nam</a></div>
+        <ul class="menu">
+            <li><a href="#">Điện thoại Mi</a></li>
+            <li><a href="#a">Sản Phẩm Hot</a></li>
+            <li><a href="#b">Thư viện </a></li>
+            <li><a href="#c ">Liên hệ</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <img src="images/note5.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="images/mii.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="images/mia2.jpg" style="width:100%">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        <div style="text-align:center; margin-top: -50px">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+        </script>
+        <script>
+            var slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1 }
+                slides[slideIndex - 1].style.display = "block";
+                setTimeout(showSlides, 2000);
+            }
+        </script>
+        <a name="a"><div class="list">
+                <div class="spmi">
+                    <h2 class="hometitle">----------------------- SẢN PHẨM HOT -----------------------
+                    </h2>
+                </div>
+                <div class="sp1">
+                    <img class="img" src="images/pin.jpg">
+                </div>
+                <div class="sp2">
+                    <img class="img" src="images/mibox.jpg">
+                </div>
+                <div class="sp3">
+                    <img class="img" src="images/tainghe.jpg">
+                </div>
+                <div class="sp4 ">
+                    <img class="img" src="images/loa.jpg">
+                </div>
+
+            </div><img src="images/index-header-bg-v2.jpg" height="600px" width="100%" style="margin-top: 5px;">
+            <div class="pic-box">
+                <img class="img" src="images/vien.png" width="400px" height="500px">
+            </div>
+            <div class="pic-box1">
+                <img class="img" src="images/mix2-name.png" width="200px">
+                <h1 class="phantom2">Sự kiện ra mắt sản phẩm mới </h1>
+                <p class="phantom3">Smartphone không viền màn hình, nâng tầm trải nghiệm<br> Thuộc dòng flagship với chip
+                    Snapdragon 835 mạnh nhất.
+                </p>
+            </div>
+            <div class="boc1">
+                <img src="images/thhhhhh.png" width="100%" height="600px">
+            </div>
+            <div>
+                <img src="images/index-camera-bg.jpg" width="100%" height="800px">
+            </div>
+            <div class="pic-box2">
+                <div class="img">
+                    <h3 class="phantom4">Chất lượng ảnh xuất sắc</h3>
+                </div>
+                <div class="img">
+                    <h2 class="phantom5">Chống rung quang học 4 trục</h2>
+                </div>
+                <div class="img">
+                    <p class="phantom6" ,>Mi MIX 2 sử dụng cảm biến hình ảnh IMX386, điểm ảnh lớn 1.25μm và công nghệ OIS
+                        4 trục giúp bạn lưu lại những khoảnh khắc ấn tượng trong mọi tình huống.</p>
+                </div>
+            </div>
+            <div style="margin-top: 490px">
+                <img src="images/index-network-bg.jpg" width="100%" height="800px">
+            </div>
+            <div>
+                <div class="img">
+                    <h2 class="phantom7">Hệ thống loa dẫn hướng hoàn toàn mới</h2>
+                </div>
+                <div class="img">
+                    <p class="phantom8">Bộ thu tín hiệu hiệu suất cao kết hợp kết cấu ống dẫn hướng âm thanh, <br>do đó bạn
+                        có thể thực hiện cuộc gọi với âm thanh rõ ràng, thậm chí cả trong môi trường có tiếng ồn lớn.</p>
+                </div>
+            </div>
+            <div class="pic-box3">
+                <div class="img">
+                    <h2 class="phantom7">Băng tần quốc tế - Không giới hạn kết nối</h2>
+                </div>
+                <div class="img">
+                    <p class="phantom8">Mi MIX 2 hỗ trợ hầu hết các băng tần LTE quốc tế, bạn đồng hành lý tưởng cho các
+                        chuyến đi.
+                    </p>
+                </div>
+            </div>
+            <div style="margin-top: 80px">
+                <img src="images/index-unibody-bg.jpg" width="100%" height="800px">
+            </div>
+            <div class="pic-box4">
+                <div class="img"><img src="images/xiaomi-mi-mix-2-64gb-black.jpg" width="400" height="400"></div>
+                <div class="img">
+                    <h2 class="phantom9">Snapdragon 835 + RAM dung lượng lớn 8GB</h2>
+                </div>
+                <div class="img">
+                    <p class="phantom10">*Mi MIX 2 Phiên bản Đặc biệt: 8GB + 128GB / Mi MIX 2: 6GB + 64GB</p>
+                </div>
+                <div class="hihi">
+                    <div class="img">
+                        <h2 class="phantom9">Thiết kế gốm nguyên khối</h2>
+                    </div>
+                    <div class="img">
+                        <p class="phantom10">Mi MIX 2 Phiên bản Đặc biệt gây ấn tượng mạnh với thiết kế gốm nguyên khối và
+                            hiện có sẵn màu trắng.<br>Viền máy ảnh được mạ vàng 18K cao cấp, tô thêm nét sang trọng mười
+                            phân vẹn mười.
+                            <br>*Thiết kế gốm nguyên khối cao cấp được chế tác riêng cho Mi MIX 2 Phiên bản Đặc biệt </p>
+                    </div>
+                </div>
+            </div></a>
+        <div class="spmi">
+            <a name="b"><h2 class="hometitle">----------------------- Thư Viện -----------------------</h2>
+        </div>
+
+        <div class="row">
+            <div class="box-one">
+                <div class="box-small">
+                    <div class="imgg">
+                        <img src="images/note4x.png" height="400" width="400"><h4 style="font-size: 20px; color: #000; margin-top: -40px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+                            Xiaomi Note 4X </h4>
+                    </div>
+                </div>
+                <div class="so" style="margin-top: -50px;">
+                    <a rel="nofollow" href="https://cellphones.com.vn/mobile/xiaomi.html" data-quantity="1" data-product_id="52" data-product_sku=""
+                        class="button product_type_variable add_to_cart_button" style="margin-top: -45px; margin-left: 180px;">Mua
+                        ngay
+                    </a> </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: -458px; margin-left: 486px;">
+        <div class="box-one">
+            <div class="box-small">
+                <div class="imgg">
+                    <img src="images/redim 5 plus.png" height="380" width="380"><h4 style="font-size: 20px; color: #000; margin-top: -20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+                        Xiaomi Remi 5Plus </h4>
+                </div>
+            </div>
+            <div class="so" style="margin-top: -50px;">
+                <a rel="nofollow" href="https://cellphones.com.vn/mobile/xiaomi.html" data-quantity="1" data-product_id="52" data-product_sku=""
+                    class="button product_type_variable add_to_cart_button" style="margin-top: -1180px; margin-left: 180px;">Mua
+                    ngay
+                </a> </div>
+        </div>
+    </div>
+    </div>
+    <div class="row" style="margin-top: -458px; margin-left: 960px;">
+        <div class="box-one">
+            <div class="box-small">
+                <div class="imgg">
+                    <img src="images/redmi 6a.png" height="400" width="400"><h4 style="font-size: 20px; color: #000; margin-top: -40px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+                        Xiaomi Rdmi 6A </h4>
+                </div>
+            </div>
+            <div class="so" style="margin-top: -50px;">
+                <a rel="nofollow" href="https://cellphones.com.vn/mobile/xiaomi.html" data-quantity="1" data-product_id="52" data-product_sku=""
+                    class="button product_type_variable add_to_cart_button" style="margin-top: -45px; margin-left: 180px;">Mua
+                    ngay
+                </a> </div>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="box-one">
+            <div class="box-small">
+                <div class="imgg">
+                    <img src="images/mi6.png" height="400" width="400"><h4 style="font-size: 20px; color: #000; margin-top: -40px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+                        Xiaomi Mi 6 </h4>
+                </div>
+            </div>
+            <div class="so" style="margin-top: -50px;">
+                <a rel="nofollow" href="https://cellphones.com.vn/mobile/xiaomi.html" data-quantity="1" data-product_id="52" data-product_sku=""
+                    class="button product_type_variable add_to_cart_button" style="margin-top: -45px; margin-left: 180px;">Mua
+                    ngay
+                </a> </div>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="box-one">
+            <div class="box-small">
+                <div class="imgg">
+                    <img src="images/mi6pro.png" height="340" width="340" style="margin-top: 20px"><h4 style="font-size: 20px; color: #000; margin-top: 0px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+                        Xiaomi Mi 6 Pro </h4>
+                </div>
+            </div>
+            <div class="so" style="margin-top: -50px;">
+                <a rel="nofollow" href="https://cellphones.com.vn/mobile/xiaomi.html" data-quantity="1" data-product_id="52" data-product_sku=""
+                    class="button product_type_variable add_to_cart_button" style="margin-top: -45px; margin-left: 180px;">Mua
+                    ngay
+                </a> </div>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="box-one">
+            <div class="box-small">
+                <div class="imgg">
+                    <img src="images/mi8.png" height="340" width="340" style="margin-top: 20px"><h4 style="font-size: 20px; color: #000; margin-top: 0px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+                        Xiaomi Mi 8 </h4>
+                </div>
+            </div>
+            <div class="so" style="margin-top: -50px;">
+                <a rel="nofollow" href="https://cellphones.com.vn/mobile/xiaomi.html" data-quantity="1" data-product_id="52" data-product_sku=""
+                    class="button product_type_variable add_to_cart_button" style="margin-top: -45px; margin-left: 180px;">Mua
+                    ngay
+                </a> </div>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="box-one">
+            <div class="box-small">
+                <div class="imgg">
+                    <img src="images/xiamishark.png" height="400" width="400"><h4 style="font-size: 20px; color: #000; margin-top: -30px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+                        Xiaomi Black Shark </h4>
+                </div>
+            </div>
+            <div class="so" style="margin-top: -50px;">
+                <a rel="nofollow" href="https://cellphones.com.vn/mobile/xiaomi.html" data-quantity="1" data-product_id="52" data-product_sku=""
+                    class="button product_type_variable add_to_cart_button" style="margin-top: -45px; margin-left: 180px;">Mua
+                    ngay
+                </a> </div>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="box-one">
+            <div class="box-small">
+                <div class="imgg">
+                    <img src="images/mi4c.png" height="380" width="340"><h4 style="font-size: 20px; color: #000; margin-top: -20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+                        Xiaomi Mi 4C Prime </h4>
+                </div>
+            </div>
+            <div class="so" style="margin-top: -50px;">
+                <a rel="nofollow" href="https://cellphones.com.vn/mobile/xiaomi.html" data-quantity="1" data-product_id="52" data-product_sku=""
+                    class="button product_type_variable add_to_cart_button" style="margin-top: -45px; margin-left: 180px;">Mua
+                    ngay
+                </a> </div>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="box-one">
+            <div class="box-small">
+                <div class="imgg">
+                    <img src="images/xiaomi-mi-a2.png" height="400" width="400"><h4 style="font-size: 20px; color: #000; margin-top: -40px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+                        Xiaomi Mi A2 Lite</h4>
+                </div>
+            </div>
+            <div class="so" style="margin-top: -50px;">
+                <a rel="nofollow" href="https://cellphones.com.vn/mobile/xiaomi.html" data-quantity="1" data-product_id="52" data-product_sku=""
+                    class="button product_type_variable add_to_cart_button" style=" margin-top: -45px; margin-left: 180px;">Mua
+                    ngay
+                </a> </div>
+        </div>
+    </div></a>
+    <a name="c"><div class="spmi" style="margin-top: 980px">
+            <h2 class="hometitle">----------------------- Liên Hệ -----------------------</h2>
+        </div>
+        <div class="lh">
+            <div style="height: 30px; background-color: #222; "></div>
+            <div>
+                <form action="" method="POST" style="margin-left: 70px;">
+                    <label> Họ tên</label>
+                    <input type="text" name="Name" id="name" size="40" value="">
+                    <span id="errorname" class="error"></span><br><br>
+                    <label>Email</label>
+                    <input type="text" name="email" id="email" size="40" value="">
+                    <span id="erroremail" class="error"></span><br><br>
+                    <label>Số điện thoại</label>
+                    <input type="text" name="phone" id="phone" size="40" value="">
+                    <span id="errorphone" class="error"></span><br><br>
+                    <label>Ngày liên hệ </label>
+                    Ngày <select id="Ngay">
+                        <script type="text/javascript">
+                            for (i = 1; i <= 31; i++) {
+                                document.write("<option value=" + i + ">" + i + "</option>");
+                            }
+                        </script>
+                    </select> &nbsp Tháng <select id="Thang">
+                        <script type="text/javascript">
+                            for (i = 1; i <= 12; i++) {
+                                document.write("<option value=" + i + ">" + i + "</option>");
+                            }
+                        </script>
+                    </select> &nbsp Năm <select id="Nam">
+                        <script type="text/javascript">
+                            for (i = 1990; i <= 2020; i++) {
+                                document.write("<option value=" + i + ">" + i + "</option>")
+                            }
+                        </script>
+                    </select>
+                    </td>
+                    </p>
+                    <p id="nhapngay"></p>
+                    <label>Địa chỉ</label>
+                    <input type="text" name="address" id="address" size="40" value="">
+                    <span id="erroraddress" class="error"></span><br><br>
+                    <label>Nội dung</label>
+                    <input type="text" name="comment" id="comment" size="40" value="">
+                    <span id="errorcomment" class="error"></span><br><br>
+                    <label>&nbsp;</label>
+                    <button onclick="getInfo(); return false;"> Gửi</button>
+                </form>
+            </div>
+            <div style="margin-left: 700px; margin-top: -300px"><iframe src="https://www.google.com/maps/d/u/0/embed?mid=1W5ReFxqtFgE2INsa-zQHYQvlPJiSJ1hc"
+                    width="800" height="320"></iframe></div>
+        </div>
+        <div class="footer">
+            <div class="footer-container">
+                <div class="sp12">
+                    <h3>HÃY ĐỂ CHÚNG TÔI LIÊN LẠC VỚI BẠN</h3>
+                    <p>Nhận cập nhật sự kiện khuyến mãi và nhiều thứ khác</p>
+                    <div class="customer-email">
+                        <div id="J_emailSubscribe" onclick="_msq.push(['trackEvent', 'event', 'index', '-footer-enter_email_click', '']);">
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sp8">
+                    <h3>THEO DÕI MI</h3>
+                    <p>Chúng tôi luôn lắng nghe từ bạn!</p>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="container1" style="float: left;">
+                <p class="spp">TÌM HIỂU THÊM</p>
+                <div class="sss">
+                    <a class="ss">Redmi 4A</a><br><br>
+                    <a class="ss">Redmi Note 4</a>
+                </div>
+                <p class="spp">HỖ TRỢ</p>
+                <div class="sss">
+                    <a class="ss">Bảo hành</a><br><br>
+                    <a class="ss">Mua hàng</a><br><br>
+                    <a class="ss">Xác thực Sản phẩm</a><br><br>
+                    <a class="ss">Trung tâm Dịch vụ</a>
+                </div>
+                <p class="spp">GIỚI THIỆU
+                </p>
+                <div class="sss">
+                    <a class="ss">Xiaomi</a><br><br>
+                    <a class="ss">Chính sách Riêng tư</a>
+                </div>
+
+                <p class="spp">LIÊN HỆ</p><br><br><br><br><br><br><br><br><br><br><br><br>
+                <hr style="margin-left: 10px">
+                <div style="margin-top: 110px; margin-left: 550px;">
+                    <p class="cmm">Copyright © 2010 - 2018 Xiaomi. All Rights Reserved</p>
+                </div>
+            </div>
+    </a>
+    </div>
+    </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
